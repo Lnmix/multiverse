@@ -16,7 +16,7 @@
               "default": 1
             },
             "instances": {
-              "description": "Number of Chronos instances to run.",
+              "description": "Number of Nimbus instances to run.",
               "type": "integer",
               "minimum": 0,
               "default": 1
