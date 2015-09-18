@@ -49,6 +49,19 @@
       }
     },
     {
+      "currentVersion":"0.9.3",
+      "description":"Distributed realtime computation system.",
+      "framework":true,
+      "name":"storm",
+      "tags":[
+        "mesosphere",
+        "framework"
+      ],
+      "versions":{
+        "0.9.3":"0"
+      }
+    },
+    {
       "currentVersion":"0.0.1",
       "description":"Zeppelin is a web-based notebook that enables interactive data analytics",
       "framework":true,

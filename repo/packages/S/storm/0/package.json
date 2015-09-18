@@ -1,0 +1,15 @@
+{
+  "name": "storm",
+  "version": "0.9.3",
+  "scm": "https://github.com/apache/storm/",
+  "website": "https://storm.apache.org/",
+  "maintainer": "max@leadnomics.com",
+  "description": "Distributed realtime computation system.",
+  "framework": true,
+  "tags": [
+    "mesosphere",
+    "framework"
+  ],
+  "preInstallNotes": "",
+  "postInstallNotes": ""
+}

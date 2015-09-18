@@ -1,0 +1,113 @@
+{
+  "id": "/storm",
+  "groups": [
+    {
+      "id": "{{storm.nimbus.name}}",
+      "cpus": "{{storm.nimbus.cpus}}",
+      "mem": "{{storm.nimbus.mem}}",
+      "instances": "{{storm.nimbus.instances}}",
+      "env": {
+        "MASTER_HOSTNAME": "master.mesos"
+      },
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "obaidsalikeen/storm-nimbus:0.9.3",
+          "network": "BRIDGE",
+          "portMappings": [
+            {
+              "containerPort": 6627,
+              "hostPort": 0,
+              "servicePort": 6627,
+              "protocol": "tcp"
+            },
+            {
+              "containerPort": 3772,
+              "hostPort": 0,
+              "servicePort": 3662,
+              "protocol": "tcp"
+            },
+            {
+              "containerPort": 3773,
+              "hostPort": 0,
+              "servicePort": 3773,
+              "protocol": "tcp"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "{{storm.supervisor.name}}",
+      "cpus": "{{storm.supervisor.cpus}}",
+      "mem": "{{storm.supervisor.mem}}",
+      "instances": "{{storm.supervisor.instances}}",
+      "env": {
+        "MASTER_HOSTNAME": "master.mesos"
+      },
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "obaidsalikeen/storm-supervisor:0.9.3",
+          "network": "BRIGE",
+          "portMappings": [
+            {
+              "containerPort": 6700,
+              "hostPort": 0,
+              "servicePort": 6700,
+              "protocol": "tcp"
+            },
+            {
+              "containerPort": 6701,
+              "hostPort": 0,
+              "servicePort": 6701,
+              "protocol": "tcp"
+            },
+            {
+              "containerPort": 6702,
+              "hostPort": 0,
+              "servicePort": 6702,
+              "protocol": "tcp"
+            },
+            {
+              "containerPort": 6703,
+              "hostPort": 0,
+              "servicePort": 6703,
+              "protocol": "tcp"
+            },
+            {
+              "containerPort": 6704,
+              "hostPort": 0,
+              "servicePort": 6704,
+              "protocol": "tcp"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "/storm/ui",
+      "cpus": "{{storm.ui.instances}}",
+      "mem": "{{storm.ui.instances}}",
+      "instances": "{{storm.ui.instances}}",
+      "env": {
+        "MASTER_HOStNAME": "master.mesos"
+      },
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "obaidsalikeen/storm-ui:0.9.3",
+          "network": "BRIDGE",
+          "partMappings": [
+            {
+              "containerPort": 8080,
+              "hostPort": 0,
+              "servicePort": 8888,
+              "protocol": "tcp"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

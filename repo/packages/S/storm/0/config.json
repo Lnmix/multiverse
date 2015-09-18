@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "properties": {
+    "storm": {
+      "description": "Storm specific configuration properties",
+      "type": "object",
+      "properties": {
+        "nimbus": {
+          "description": "Nimbus specific configuration properties",
+          "type": "object",
+          "properties": {
+            "cpus": {
+              "description": "CPU shares to allocate to each Nimbus instance.",
+              "type": "number",
+              "minimum": 0,
+              "default": 1
+            },
+            "instances": {
+              "description": "Number of Chronos instances to run.",
+              "type": "integer",
+              "minimum": 0,
+              "default": 1
+            },
+            "mem": {
+              "default": 300,
+              "description": "Memory (MB) to allocate to each Nimbus instance.",
+              "type": "integer"
+            },
+            "name": {
+              "default": "/storm/nimbus",
+              "description": "The name of Nimbus on marathon.",
+              "type": "string"
+            }
+          }
+        },
+        "supervisor": {
+          "description": "supervisor specific configuration properties",
+          "type": "object",
+          "properties": {
+            "cpus": {
+              "description": "CPU shares to allocate to each supervisor instance.",
+              "type": "number",
+              "minimum": 1,
+              "default": 2
+            },
+            "instances": {
+              "description": "Number of supervisor instances to run.",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "mem": {
+              "default": 320,
+              "description": "Memory (MB) to allocate to each supervisor instance.",
+              "type": "integer"
+            },
+            "name": {
+              "default": "/storm/supervisor",
+              "description": "The name of supervisor on marathon.",
+              "type": "string"
+            }
+          }
+        },
+        "ui": {
+          "description": "StormUI specific configuration properties",
+          "type": "object",
+          "properties": {
+            "cpus": {
+              "description": "CPU shares to allocate to each StormUI instance.",
+              "type": "number",
+              "minimum": 0,
+              "default": 0.2
+            },
+            "instances": {
+              "description": "Number of StormUI instances to run.",
+              "type": "integer",
+              "minimum": 0,
+              "default": 1
+            },
+            "mem": {
+              "default": 100,
+              "description": "Memory (MB) to allocate to each StormUI instance.",
+              "type": "integer"
+            },
+            "name": {
+              "default": "/storm/ui",
+              "description": "The name of StormUI on marathon.",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
